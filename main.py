@@ -151,7 +151,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
         #print(inputb.shape)
         #print(labelb.shape)
         #print(predValuesB.shape)
-        graphPoints(inputb[0],labelb[0],predValuesB[0])
+        #graphPoints(inputb[0],labelb[0],predValuesB[0])
 
 
         if itr % SUMMARY_INTERVAL == 0:
@@ -189,7 +189,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                 inputb = batch_x[:, num_classes*FLAGS.update_batch_size:, :]
                 labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
                 labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
-                #print("inputa: " , inputa[0])
+                print("inputa: " , inputa[0])
                 #print("Ina Shape: " , inputa.shape)
                 #print("Inb Shape: " , inputb.shape)
                 #my = input("hi")
