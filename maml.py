@@ -24,7 +24,7 @@ class MAML:
         self.classification = False
         self.test_num_updates = test_num_updates
         if FLAGS.datasource == 'sinusoid':
-            self.dim_hidden = [40, 40]
+            self.dim_hidden = [40, 40,40]
             self.loss_func = mse
             self.forward = self.forward_fc
             self.construct_weights = self.construct_fc_weights
