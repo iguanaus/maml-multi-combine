@@ -8,3 +8,6 @@ New run:
   python main.py --datasource=sinusoid --logdir=logs/sine4/ --metatrain_iterations=20000 --norm=None --update_batch_size=10 --limit_task True --regularize_penal 0.0 --meta_lr .00001 --update_lr .00001
 
 
+
+Trying to get the multi-state to train:
+  python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume False --pretrain_iterations=70000 --metatrain_iterations=0

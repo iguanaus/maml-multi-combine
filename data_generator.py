@@ -39,11 +39,18 @@ def convertData(batch_size,myTrain,shouldPlot=False):
                 data = task[0]
                 inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
                 onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
+                
+
                 inputb = data[1][0].reshape(-1,6)
-                onlyNextLabelb = data[1][0][:,0:1,:].reshape(-1,2)
+                #print("in b:" , inputb)
+                onlyNextLabelb = data[1][1][:,0:1,:].reshape(-1,2) #This was pulling from the same set. 
+                #print("Next b: " , onlyNextLabelb)
+
                 inputs = np.vstack((inputa,inputb))
                 inputs = inputs.reshape(1,-1,6)
                 labels = np.vstack((onlyNextLabela,onlyNextLabelb)).reshape(1,-1,2)
+                #print("Inputs:" , inputs)
+                #print("Labels:" , labels)
                 #print("X's: " , inputs[0][0])
                 #print("Ans: " , labels[0][0])
                 #Graph all the points now
@@ -63,9 +70,24 @@ def convertData(batch_size,myTrain,shouldPlot=False):
                     inputAll = np.vstack((inputAll,inputs))
                     labelAll = np.vstack((labelAll,labels))
                 #print("IN All: " , inputAll)
+
+                inputb = inputAll[:,FLAGS.update_batch_size:]
+                labelb = labelAll[:,FLAGS.update_batch_size:]
+                #print("InputB: " , inputb)
+                #print("LabelB: " , labelb)
+                #os.exit()
+
             if shouldPlot:
                 plt.show()
             allTrainData.append([inputAll,labelAll,0,0])
+        #print("Sample batch:")
+        b_x,b_y,amp,phase = allTrainData[1]
+        inputb = b_x[:,:FLAGS.update_batch_size]
+        labelb = b_y[:,:FLAGS.update_batch_size]
+        #print("InputB: " , inputb)
+        #print("LabelB: " , labelb)
+        #os.exit()
+
         #print("Train data: " , allTrainData)
         return allTrainData
 

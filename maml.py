@@ -125,10 +125,14 @@ class MAML:
             if self.classification:
                 out_dtype.extend([tf.float32, [tf.float32]*num_updates])
             result = tf.map_fn(task_metalearn, elems=(self.inputa, self.inputb, self.labela, self.labelb), dtype=out_dtype, parallel_iterations=FLAGS.meta_batch_size)
+            #In case you want to fetch it. 
+            
+
             if self.classification:
                 outputas, outputbs, lossesa, lossesb, accuraciesa, accuraciesb = result
             else:
                 outputas, outputbs, lossesa, lossesb  = result
+            self.outputbs = outputbs
         print("Meta batch: " , FLAGS.meta_batch_size)
         ## Performance & Optimization
 

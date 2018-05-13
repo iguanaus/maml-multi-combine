@@ -1,0 +1,389 @@
+Pretrain Iteration 100: 0.2512991, 0.25238276
+Pretrain Iteration 200: 0.14644498, 0.14733703
+Pretrain Iteration 300: 0.019532422, 0.017598478
+Pretrain Iteration 400: 0.018605642, 0.016583283
+Pretrain Iteration 500: 0.019093579, 0.016637499
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.018398668617010117, 0.016249490901827812
+Pretrain Iteration 600: 0.018424645, 0.016481142
+Pretrain Iteration 700: 0.017144207, 0.014938729
+Pretrain Iteration 800: 0.018274304, 0.016422536
+Pretrain Iteration 900: 0.01700878, 0.014890704
+Pretrain Iteration 1000: 0.016942048, 0.014871839
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.017821630463004112, 0.015427269041538239
+Pretrain Iteration 1100: 0.016869087, 0.014852372
+Pretrain Iteration 1200: 0.017991189, 0.016372047
+Pretrain Iteration 1300: 0.01802975, 0.01575584
+Pretrain Iteration 1400: 0.018376302, 0.016512835
+Pretrain Iteration 1500: 0.017687015, 0.015631879
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.017707325518131256, 0.0157961193472147
+Pretrain Iteration 1600: 0.017632298, 0.01570483
+Pretrain Iteration 1700: 0.017448096, 0.016287
+Pretrain Iteration 1800: 0.01611035, 0.014737954
+Pretrain Iteration 1900: 0.017048936, 0.015586543
+Pretrain Iteration 2000: 0.017067697, 0.016325729
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.016909200698137283, 0.016127143055200577
+Pretrain Iteration 2100: 0.016753826, 0.015699767
+Pretrain Iteration 2200: 0.015524352, 0.014821458
+Pretrain Iteration 2300: 0.016291054, 0.015759334
+Pretrain Iteration 2400: 0.01636215, 0.01650216
+Pretrain Iteration 2500: 0.015953112, 0.016090557
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.015793951228260994, 0.01617494970560074
+Pretrain Iteration 2600: 0.016583962, 0.01714328
+Pretrain Iteration 2700: 0.016380249, 0.017379124
+Pretrain Iteration 2800: 0.01511024, 0.016675904
+Pretrain Iteration 2900: 0.015428274, 0.017588742
+Pretrain Iteration 3000: 0.015166069, 0.017941533
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.015094524249434471, 0.01778593845665455
+Pretrain Iteration 3100: 0.013720596, 0.016809793
+Pretrain Iteration 3200: 0.014015379, 0.01858975
+Pretrain Iteration 3300: 0.014489109, 0.019552443
+Pretrain Iteration 3400: 0.014456105, 0.020415254
+Pretrain Iteration 3500: 0.014115017, 0.021032829
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.012606562115252018, 0.020011235028505325
+Pretrain Iteration 3600: 0.013959047, 0.021766074
+Pretrain Iteration 3700: 0.014327269, 0.023133941
+Pretrain Iteration 3800: 0.013903314, 0.023082342
+Pretrain Iteration 3900: 0.01266897, 0.021924984
+Pretrain Iteration 4000: 0.014220426, 0.024500245
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.014198312535881996, 0.024353455752134323
+Pretrain Iteration 4100: 0.013875557, 0.02404889
+Pretrain Iteration 4200: 0.013742412, 0.024053965
+Pretrain Iteration 4300: 0.012880333, 0.02464494
+Pretrain Iteration 4400: 0.012789029, 0.024615107
+Pretrain Iteration 4500: 0.013945774, 0.024401117
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.013634467497467996, 0.025000154972076416
+Pretrain Iteration 4600: 0.0138144195, 0.02431138
+Pretrain Iteration 4700: 0.014197584, 0.025043197
+Pretrain Iteration 4800: 0.01379867, 0.024327356
+Pretrain Iteration 4900: 0.0141874645, 0.02507656
+Pretrain Iteration 5000: 0.012956367, 0.024872165
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.01322630140930414, 0.024686634540557858
+Pretrain Iteration 5100: 0.012638016, 0.022776768
+Pretrain Iteration 5200: 0.012618218, 0.022782002
+Pretrain Iteration 5300: 0.012805581, 0.024769897
+Pretrain Iteration 5400: 0.013744877, 0.024295984
+Pretrain Iteration 5500: 0.013751525, 0.024292367
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.013485847972333431, 0.024454094469547275
+Pretrain Iteration 5600: 0.013726353, 0.024307765
+Pretrain Iteration 5700: 0.0128801, 0.024883838
+Pretrain Iteration 5800: 0.013730791, 0.024331896
+Pretrain Iteration 5900: 0.012810814, 0.024816105
+Pretrain Iteration 6000: 0.012563987, 0.022799773
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.013261773623526096, 0.023866545408964157
+Pretrain Iteration 6100: 0.013765831, 0.024377882
+Pretrain Iteration 6200: 0.012720897, 0.024742777
+Pretrain Iteration 6300: 0.01411054, 0.025092686
+Pretrain Iteration 6400: 0.014099963, 0.025062513
+Pretrain Iteration 6500: 0.013607328, 0.024248054
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.014071037992835045, 0.024935899302363396
+Pretrain Iteration 6600: 0.012759235, 0.024825925
+Pretrain Iteration 6700: 0.012545457, 0.022813039
+Pretrain Iteration 6800: 0.0140736345, 0.02509386
+Pretrain Iteration 6900: 0.013704223, 0.02438026
+Pretrain Iteration 7000: 0.012499247, 0.022804115
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.013204026035964489, 0.023907966911792755
+Pretrain Iteration 7100: 0.012762897, 0.024867648
+Pretrain Iteration 7200: 0.013975983, 0.024996892
+Pretrain Iteration 7300: 0.013472157, 0.024180107
+Pretrain Iteration 7400: 0.013737486, 0.024741516
+Pretrain Iteration 7500: 0.013341732, 0.024301862
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.01332232356071472, 0.02421443909406662
+Pretrain Iteration 7600: 0.010944895, 0.022960491
+Pretrain Iteration 7700: 0.008660725, 0.020318475
+Pretrain Iteration 7800: 0.006578879, 0.016212737
+Pretrain Iteration 7900: 0.005008872, 0.014813666
+Pretrain Iteration 8000: 0.0041227005, 0.014668772
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.004175511654466391, 0.01521204225718975
+Pretrain Iteration 8100: 0.0036519605, 0.015720269
+Pretrain Iteration 8200: 0.0028196229, 0.01654907
+Pretrain Iteration 8300: 0.0022781661, 0.017913708
+Pretrain Iteration 8400: 0.0019399716, 0.019780807
+Pretrain Iteration 8500: 0.0015961378, 0.02177174
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0016081762732937932, 0.021223511546850204
+Pretrain Iteration 8600: 0.001504969, 0.022750607
+Pretrain Iteration 8700: 0.0014852973, 0.023319924
+Pretrain Iteration 8800: 0.0013899809, 0.023560353
+Pretrain Iteration 8900: 0.0013763404, 0.02371617
+Pretrain Iteration 9000: 0.0014421949, 0.023860939
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.001426061149686575, 0.023195266723632812
+Pretrain Iteration 9100: 0.0013584876, 0.023888335
+Pretrain Iteration 9200: 0.0014155043, 0.023942528
+Pretrain Iteration 9300: 0.0014111277, 0.023917455
+Pretrain Iteration 9400: 0.0014484294, 0.023070455
+Pretrain Iteration 9500: 0.0013967945, 0.02394328
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.001393029699102044, 0.023758694529533386
+Pretrain Iteration 9600: 0.0014147484, 0.023939978
+Pretrain Iteration 9700: 0.0014272002, 0.023091458
+Pretrain Iteration 9800: 0.0014144644, 0.02305416
+Pretrain Iteration 9900: 0.001407345, 0.023082446
+Pretrain Iteration 10000: 0.0014387979, 0.023593297
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0013490583514794707, 0.023305226117372513
+Pretrain Iteration 10100: 0.0012808344, 0.023993455
+Pretrain Iteration 10200: 0.0013947125, 0.023141233
+Pretrain Iteration 10300: 0.0013846245, 0.023161337
+Pretrain Iteration 10400: 0.0013846663, 0.023175873
+Pretrain Iteration 10500: 0.0013990966, 0.023618
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0013217800296843052, 0.023571927100419998
+Pretrain Iteration 10600: 0.0013747977, 0.02314917
+Pretrain Iteration 10700: 0.0013787803, 0.023164246
+Pretrain Iteration 10800: 0.0013552302, 0.023169046
+Pretrain Iteration 10900: 0.0013532618, 0.02313875
+Pretrain Iteration 11000: 0.0012285034, 0.023962975
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.001332656480371952, 0.023421769961714745
+Pretrain Iteration 11100: 0.0012238902, 0.02397808
+Pretrain Iteration 11200: 0.001216937, 0.024008388
+Pretrain Iteration 11300: 0.0012135366, 0.024024472
+Pretrain Iteration 11400: 0.0012743503, 0.024055133
+Pretrain Iteration 11500: 0.0012071182, 0.02405594
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0012838131515309215, 0.023755064234137535
+Pretrain Iteration 11600: 0.0011997215, 0.024045665
+Pretrain Iteration 11700: 0.0011932075, 0.024017911
+Pretrain Iteration 11800: 0.0011850892, 0.02403686
+Pretrain Iteration 11900: 0.0012987768, 0.023194285
+Pretrain Iteration 12000: 0.0013311005, 0.023678422
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.001216957694850862, 0.02341240830719471
+Pretrain Iteration 12100: 0.0011737995, 0.024058629
+Pretrain Iteration 12200: 0.0013394407, 0.023744736
+Pretrain Iteration 12300: 0.0013141126, 0.023690885
+Pretrain Iteration 12400: 0.0011672057, 0.024015421
+Pretrain Iteration 12500: 0.001234951, 0.024036337
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0012342577101662755, 0.023748764768242836
+Pretrain Iteration 12600: 0.0013189903, 0.023700928
+Pretrain Iteration 12700: 0.0012196375, 0.024024308
+Pretrain Iteration 12800: 0.0012104582, 0.024003176
+Pretrain Iteration 12900: 0.0012086261, 0.024010988
+Pretrain Iteration 13000: 0.0012868479, 0.023698434
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0012114450801163912, 0.023847026750445366
+Pretrain Iteration 13100: 0.0012862934, 0.023674851
+Pretrain Iteration 13200: 0.0012824617, 0.023669712
+Pretrain Iteration 13300: 0.0011305311, 0.024031539
+Pretrain Iteration 13400: 0.0011284244, 0.024035022
+Pretrain Iteration 13500: 0.0012707573, 0.023700738
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011491912882775068, 0.023395685479044914
+Pretrain Iteration 13600: 0.0011171753, 0.024071015
+Pretrain Iteration 13700: 0.0012719553, 0.023756966
+Pretrain Iteration 13800: 0.0011713088, 0.024008801
+Pretrain Iteration 13900: 0.0012139534, 0.023266777
+Pretrain Iteration 14000: 0.0012514689, 0.023749659
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011517228558659554, 0.023438215255737305
+Pretrain Iteration 14100: 0.0011008867, 0.024079133
+Pretrain Iteration 14200: 0.001100321, 0.024068551
+Pretrain Iteration 14300: 0.0012028352, 0.023241114
+Pretrain Iteration 14400: 0.0010921245, 0.024072057
+Pretrain Iteration 14500: 0.0012402809, 0.023771467
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011640132870525122, 0.023811543360352516
+Pretrain Iteration 14600: 0.0012350766, 0.023771966
+Pretrain Iteration 14700: 0.0011885613, 0.023278713
+Pretrain Iteration 14800: 0.0010794007, 0.024102382
+Pretrain Iteration 14900: 0.0011379835, 0.024038903
+Pretrain Iteration 15000: 0.0011306742, 0.02404333
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011632374953478575, 0.023770885542035103
+Pretrain Iteration 15100: 0.001072153, 0.024124378
+Pretrain Iteration 15200: 0.0011209751, 0.024061136
+Pretrain Iteration 15300: 0.00112228, 0.024044199
+Pretrain Iteration 15400: 0.0010633725, 0.02412679
+Pretrain Iteration 15500: 0.0011668548, 0.023264213
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011437322245910764, 0.023519791662693024
+Pretrain Iteration 15600: 0.0010605474, 0.024092028
+Pretrain Iteration 15700: 0.0011652161, 0.023267627
+Pretrain Iteration 15800: 0.0011659287, 0.023233207
+Pretrain Iteration 15900: 0.0011545334, 0.023207325
+Pretrain Iteration 16000: 0.0010485065, 0.024075909
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011164987226948142, 0.02396942675113678
+Pretrain Iteration 16100: 0.0010526995, 0.02409751
+Pretrain Iteration 16200: 0.0010531653, 0.02405891
+Pretrain Iteration 16300: 0.0010971682, 0.024057638
+Pretrain Iteration 16400: 0.0010914762, 0.024032062
+Pretrain Iteration 16500: 0.0010396361, 0.024119284
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011259322054684162, 0.02380848489701748
+Pretrain Iteration 16600: 0.0011982747, 0.023736969
+Pretrain Iteration 16700: 0.0010339298, 0.02412027
+Pretrain Iteration 16800: 0.001093768, 0.024064083
+Pretrain Iteration 16900: 0.0010958832, 0.024047948
+Pretrain Iteration 17000: 0.0011323032, 0.02326387
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011066785082221031, 0.02355196513235569
+Pretrain Iteration 17100: 0.001186712, 0.023730846
+Pretrain Iteration 17200: 0.0010295515, 0.02409856
+Pretrain Iteration 17300: 0.0010747435, 0.024061749
+Pretrain Iteration 17400: 0.0011266576, 0.02325059
+Pretrain Iteration 17500: 0.0011856342, 0.023717098
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0011396508198231459, 0.023631853982806206
+Pretrain Iteration 17600: 0.0011918086, 0.02370367
+Pretrain Iteration 17700: 0.00118489, 0.023739375
+Pretrain Iteration 17800: 0.0010934183, 0.024026196
+Pretrain Iteration 17900: 0.0010631372, 0.02406918
+Pretrain Iteration 18000: 0.0011758478, 0.02372991
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010831835679709911, 0.023860985413193703
+Pretrain Iteration 18100: 0.001123793, 0.023239555
+Pretrain Iteration 18200: 0.0011709975, 0.023759264
+Pretrain Iteration 18300: 0.0010201682, 0.024110276
+Pretrain Iteration 18400: 0.0011698892, 0.023687799
+Pretrain Iteration 18500: 0.0011239793, 0.023227293
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.001126872026361525, 0.02361307665705681
+Pretrain Iteration 18600: 0.0010198243, 0.024121584
+Pretrain Iteration 18700: 0.0011184032, 0.023270248
+Pretrain Iteration 18800: 0.0011097416, 0.02328143
+Pretrain Iteration 18900: 0.0011715358, 0.023707485
+Pretrain Iteration 19000: 0.0011072097, 0.0232468
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010922540677711368, 0.0237569659948349
+Pretrain Iteration 19100: 0.0011688556, 0.023746101
+Pretrain Iteration 19200: 0.001164639, 0.023712987
+Pretrain Iteration 19300: 0.0011679908, 0.023744797
+Pretrain Iteration 19400: 0.0010042477, 0.024099018
+Pretrain Iteration 19500: 0.0011033971, 0.02324038
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010688535403460264, 0.023792404681444168
+Pretrain Iteration 19600: 0.0010041214, 0.024073185
+Pretrain Iteration 19700: 0.0010035277, 0.024069557
+Pretrain Iteration 19800: 0.001005867, 0.024036722
+Pretrain Iteration 19900: 0.0010015283, 0.02409293
+Pretrain Iteration 20000: 0.0011568784, 0.02371261
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010770270600914955, 0.023513583466410637
+Pretrain Iteration 20100: 0.0010491608, 0.023999292
+Pretrain Iteration 20200: 0.0010421784, 0.023996355
+Pretrain Iteration 20300: 0.0011151141, 0.02328246
+Pretrain Iteration 20400: 0.0011701229, 0.023746442
+Pretrain Iteration 20500: 0.0010017435, 0.024049206
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010679805418476462, 0.02367001585662365
+Pretrain Iteration 20600: 0.0010429505, 0.023977177
+Pretrain Iteration 20700: 0.001158884, 0.023718372
+Pretrain Iteration 20800: 0.00104016, 0.023955261
+Pretrain Iteration 20900: 0.0010362101, 0.024020975
+Pretrain Iteration 21000: 0.000994414, 0.024097502
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010575219057500362, 0.02381630428135395
+Pretrain Iteration 21100: 0.0010964749, 0.023227796
+Pretrain Iteration 21200: 0.0010367465, 0.024003362
+Pretrain Iteration 21300: 0.0011575796, 0.023772197
+Pretrain Iteration 21400: 0.001152906, 0.023723992
+Pretrain Iteration 21500: 0.0010310626, 0.024040366
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0010618774686008692, 0.023718448355793953
+Pretrain Iteration 21600: 0.0010948678, 0.023260498
+Pretrain Iteration 21700: 0.0011010369, 0.023254389

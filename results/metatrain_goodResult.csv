@@ -1,0 +1,234 @@
+^Ceuler@tor:~/John/maml-multi-combine$ python main.py --datasource=sinusoid --logdir=logs/ne5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000
+WARN: Cannot define MaxPoolGrad, likely already defined for this version of tensorflow: "Registering two gradient with name 'MaxPoolGrad' !(Previous registration was in <module> /home/euler/miniconda2/lib/python2.7/site-packages/tensorflow/python/__init__.py:77)"
+Meta batch:  25
+2018-05-13 12:48:48.429330: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-13 12:48:48.429360: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-13 12:48:48.429370: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-13 12:48:48.537428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:04:00.0
+Total memory: 11.92GiB
+Free memory: 6.98GiB
+2018-05-13 12:48:48.537485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2018-05-13 12:48:48.537496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2018-05-13 12:48:48.537509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:04:00.0)
+Restoring model weights from logs/sine5//cls_5.mbs_25.ubs_100.numstep1.updatelr0.0001nonorm/model6000
+Done initializing, starting training.
+4
+10
+Done with setup....
+Iteration 6000: 0.026109518, 0.013293412
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.025069324299693108, 0.012896354310214518
+Iteration 6100: 0.02573684, 0.011935162
+Iteration 6200: 0.02479044, 0.013143735
+Iteration 6300: 0.024883883, 0.013206197
+Iteration 6400: 0.025498621, 0.011704335
+Iteration 6500: 0.024598408, 0.012896335
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.02483728900551796, 0.012223699130117893
+Iteration 6600: 0.024496999, 0.010582744
+Iteration 6700: 0.0197565, 0.006603899
+Iteration 6800: 0.018712284, 0.0013075207
+Iteration 6900: 0.018477967, 0.0011666083
+Iteration 7000: 0.018841274, 0.0008408879
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.019365034997463226, 0.0008452746551483868
+Iteration 7100: 0.01957518, 0.00062792713
+Iteration 7200: 0.021530537, 0.00041311816
+Iteration 7300: 0.021666538, 0.0003077399
+Iteration 7400: 0.022485299, 0.0001845213
+Iteration 7500: 0.023681583, 9.001625e-05
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.023266110569238663, 9.4797600468155e-05
+Iteration 7600: 0.024251727, 4.983984e-05
+Iteration 7700: 0.023688212, 3.7114474e-05
+Iteration 7800: 0.023960344, 2.8953158e-05
+Iteration 7900: 0.025104932, 2.0979707e-05
+Iteration 8000: 0.02422872, 2.47989e-05
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0249137207865715, 2.1662801373167895e-05
+Iteration 8100: 0.025442773, 1.8406014e-05
+Iteration 8200: 0.024271784, 2.2020206e-05
+Iteration 8300: 0.025482407, 1.6700453e-05
+Iteration 8400: 0.02548763, 1.602196e-05
+Iteration 8500: 0.025263133, 1.6216221e-05
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024974364787340164, 1.7017689970089123e-05
+Iteration 8600: 0.02500249, 1.746101e-05
+Iteration 8700: 0.025004722, 1.6811735e-05
+Iteration 8800: 0.025479719, 1.3595771e-05
+Iteration 8900: 0.025257606, 1.3516613e-05
+Iteration 9000: 0.025468182, 1.2713789e-05
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024779589846730232, 1.4038978406460957e-05
+Iteration 9100: 0.025469765, 1.2126311e-05
+Iteration 9200: 0.024980335, 1.31991e-05
+Iteration 9300: 0.025454327, 1.1242834e-05
+Iteration 9400: 0.0252379, 1.0767136e-05
+Iteration 9500: 0.02426209, 1.217401e-05
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.025281338021159172, 1.1539089427969884e-05
+Iteration 9600: 0.025439516, 9.202938e-06
+Iteration 9700: 0.02544784, 8.735584e-06
+Iteration 9800: 0.025432674, 8.260497e-06
+Iteration 9900: 0.025436144, 7.718374e-06
+Iteration 10000: 0.025421882, 7.555382e-06
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.0247342512011528, 8.267681550933048e-06
+Iteration 10100: 0.025220996, 7.1907416e-06
+Iteration 10200: 0.02541984, 6.398007e-06
+Iteration 10300: 0.024228541, 7.464216e-06
+Iteration 10400: 0.024935685, 6.5438426e-06
+Iteration 10500: 0.024925042, 5.9773306e-06
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024713229387998584, 5.738395429943921e-06
+Iteration 10600: 0.024207644, 6.140665e-06
+Iteration 10700: 0.025189817, 4.723792e-06
+Iteration 10800: 0.02419878, 5.2021455e-06
+Iteration 10900: 0.025392285, 3.7842585e-06
+Iteration 11000: 0.024905568, 4.0383316e-06
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024653246626257893, 4.107298536837334e-06
+Iteration 11100: 0.024192154, 4.018374e-06
+Iteration 11200: 0.024181632, 3.6859979e-06
+Iteration 11300: 0.025161419, 3.074429e-06
+Iteration 11400: 0.024173627, 3.0871543e-06
+Iteration 11500: 0.024171991, 2.7648393e-06
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024870639666914943, 2.327303491256316e-06
+Iteration 11600: 0.025360953, 2.0142825e-06
+Iteration 11700: 0.02536097, 1.763003e-06
+Iteration 11800: 0.02535607, 1.5825493e-06
+Iteration 11900: 0.02534786, 1.4734225e-06
+Iteration 12000: 0.024156662, 1.6541698e-06
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024725085124373436, 1.6496691159773036e-06
+Iteration 12100: 0.025141586, 1.1787571e-06
+Iteration 12200: 0.024148779, 1.3104318e-06
+Iteration 12300: 0.0248534, 9.958615e-07
+Iteration 12400: 0.024853235, 8.828117e-07
+Iteration 12500: 0.024846096, 7.75142e-07
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024677438661456108, 8.846850505506154e-07
+Iteration 12600: 0.024846883, 7.152706e-07
+Iteration 12700: 0.024129406, 6.6216774e-07
+Iteration 12800: 0.024129247, 6.2097627e-07
+Iteration 12900: 0.02483242, 4.1719647e-07
+Iteration 13000: 0.0251196, 3.268232e-07
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.02514302171766758, 5.166664323041914e-07
+Iteration 13100: 0.024831152, 3.2421775e-07
+Iteration 13200: 0.024115743, 3.129695e-07
+Iteration 13300: 0.025110109, 1.8271857e-07
+Iteration 13400: 0.024823368, 1.926002e-07
+Iteration 13500: 0.025101466, 1.5505262e-07
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024696560576558113, 1.4002748116581643e-07
+Iteration 13600: 0.025100846, 1.2970466e-07
+Iteration 13700: 0.025303055, 9.8740685e-08
+Iteration 13800: 0.024814595, 8.1490136e-08
+Iteration 13900: 0.025298426, 5.3915272e-08
+Iteration 14000: 0.02509615, 4.7584003e-08
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024781722575426098, 8.20724750383306e-08
+Iteration 14100: 0.025296237, 3.563489e-08
+Iteration 14200: 0.02409868, 6.2262174e-08
+Iteration 14300: 0.024809567, 3.104344e-08
+Iteration 14400: 0.024806933, 2.239071e-08
+Iteration 14500: 0.025091572, 3.4576324e-08
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024795422330498695, 6.558929044331308e-08
+Iteration 14600: 0.025290495, 1.1646071e-08
+Iteration 14700: 0.025088662, 1.3994902e-08
+Iteration 14800: 0.02480371, 1.0128632e-08
+Iteration 14900: 0.024092946, 2.8436162e-08
+Iteration 15000: 0.024093192, 3.128435e-08
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024599341675639153, 1.8306590021666125e-08
+Iteration 15100: 0.024803253, 1.2344213e-08
+Iteration 15200: 0.024802243, 6.266315e-09
+Iteration 15300: 0.025084862, 2.211657e-08
+Iteration 15400: 0.025084514, 8.004928e-09
+Iteration 15500: 0.025086293, 8.815122e-09
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024598831310868263, 1.397415783088718e-08
+Iteration 15600: 0.025286693, 9.317005e-10
+Iteration 15700: 0.024087295, 3.8212193e-08
+Iteration 15800: 0.02479843, 4.067819e-08
+Iteration 15900: 0.024800248, 3.5822043e-09
+Iteration 16000: 0.025289102, 6.113687e-08
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024625964462757114, 8.491210934380433e-08
+Iteration 16100: 0.024797386, 3.588845e-08
+Iteration 16200: 0.025288658, 5.2233922e-08
+Iteration 16300: 0.02479965, 6.771953e-09
+Iteration 16400: 0.025286375, 2.628256e-09
+Iteration 16500: 0.024799652, 2.5088916e-08
+('Ina Shape: ', (100, 100, 6))
+('Inb Shape: ', (100, 100, 6))
+('meta batch size: ', 25)
+Validation results: 0.024661628529429432, 1.0877175782297856e-07
+Iteration 16600: 0.025284631, 1.7847475e-09
+Iteration 16700: 0.025285922, 4.2740503e-10
+
+(array([2.47364566e-02, 7.59000685e-08, 7.90466856e-08, 8.25452418e-08,
+       8.63945360e-08, 9.05945541e-08, 9.51433989e-08, 1.00040225e-07,
+       1.05284116e-07, 1.10875490e-07, 1.16811563e-07, 1.23092192e-07,
+       1.29716554e-07, 1.36683951e-07, 1.43992835e-07, 1.51642780e-07,
+       1.59632251e-07, 1.67961630e-07, 1.76629499e-07, 1.85634391e-07,
+       1.94975115e-07], dtype=float32), array([1.4246856e-04, 2.4767578e-08, 2.4716696e-08, 2.4683253e-08,
+       2.4668028e-08, 2.4671326e-08, 2.4694096e-08, 2.4737229e-08,
+       2.4801482e-08, 2.4887141e-08, 2.4996046e-08, 2.5128379e-08,
+       2.5285264e-08, 2.5467379e-08, 2.5676043e-08, 2.5910992e-08,
+       2.6175091e-08, 2.6466752e-08, 2.6788177e-08, 2.7139743e-08,
+       2.7522502e-08], dtype=float32), array([6.24395980e-05, 1.08548699e-08, 1.08325695e-08, 1.08179128e-08,
+       1.08112399e-08, 1.08126859e-08, 1.08226645e-08, 1.08415685e-08,
+       1.08697282e-08, 1.09072706e-08, 1.09550005e-08, 1.10129976e-08,
+       1.10817560e-08, 1.11615712e-08, 1.12530225e-08, 1.13559926e-08,
+       1.14717391e-08, 1.15995658e-08, 1.17404362e-08, 1.18945165e-08,
+       1.20622676e-08], dtype=float32))
+       

@@ -113,12 +113,15 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
             inputa = batch_x[:, :num_classes*FLAGS.update_batch_size, :]
             #print("Input a: " , inputa.shape)
             #print(inputa[0])
-            labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
             #print("Label a: " , labela.shape)
             inputb = batch_x[:, num_classes*FLAGS.update_batch_size:, :] # b used for testing
+            labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
             labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
             #print("Ina Shape: " , inputa.shape)
             #print("Inb Shape: " , inputb.shape)
+            #print("InputB: " , inputa)
+            #print("LabelB: " , labela)
+            #os.exit()
 
 
             feed_dict = {model.inputa: inputa, model.inputb: inputb,  model.labela: labela, model.labelb: labelb}
@@ -134,6 +137,20 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                 input_tensors.extend([model.total_accuracy1, model.total_accuracies2[FLAGS.num_updates-1]])
 
         result = sess.run(input_tensors, feed_dict)
+
+        print_result = sess.run(model.outputbs,feed_dict)
+        #print(print_result)
+        #print(len(print_result))
+        #print(print_result.shape)
+        predValuesB = print_result[-1] # Get the last gradient update. 
+        #print("input values b: " , inputb)
+        #print("True values b : " , labelb)
+        #print("print reuslt  : " , predValuesB)
+        #print(inputb.shape)
+        #print(labelb.shape)
+        #print(predValuesB.shape)
+        #graphPoints(inputb[0],labelb[0],predValuesB[0])
+
 
         if itr % SUMMARY_INTERVAL == 0:
             prelosses.append(result[-2])
@@ -171,8 +188,8 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                 labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
                 labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
                 #print("inputa: " , inputa[0])
-                print("Ina Shape: " , inputa.shape)
-                print("Inb Shape: " , inputb.shape)
+                #print("Ina Shape: " , inputa.shape)
+                #print("Inb Shape: " , inputb.shape)
                 #my = input("hi")
                 feed_dict = {model.inputa: inputa, model.inputb: inputb,  model.labela: labela, model.labelb: labelb, model.meta_lr: 0.0}
                 if model.classification:
@@ -181,6 +198,8 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                     input_tensors = [model.total_loss1, model.total_losses2[FLAGS.num_updates-1]]
 
             result = sess.run(input_tensors, feed_dict)
+            #print_reuslt = sess.run(model.result,feed_dict)
+            #print("print reuslt: " , print_reuslt)
             #We need to nromalize it out. 
 
             pre_loss = result[0]/100.0*FLAGS.meta_batch_size
@@ -385,6 +404,24 @@ def main():
         train(model, saver, sess, exp_string, data_generator, resume_itr)
     else:
         test(model, saver, sess, exp_string, data_generator, test_num_updates)
+
+# This is for bouncing ball, to visualize the errors.
+def graphPoints(inval,lab,true):
+    print("Graping....")
+    for i in xrange(0,len(inval)):
+        in_val = inval[i]
+        la_val = lab[i]
+        tr_val = true[i]
+        in_val.reshape(3,2)
+        la_val.reshape(1,2)
+        tr_val.reshape(1,2)
+        print("In Val: " , in_val)
+        print("LA : " , la_val)
+        print("TR : " , tr_val)
+        os.exit() 
+        
+    pass
+
 
 if __name__ == "__main__":
     main()
