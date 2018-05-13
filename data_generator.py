@@ -8,6 +8,9 @@ from tensorflow.python.platform import flags
 from utils import get_images
 import pickle
 
+import matplotlib.pylab as plt
+
+
 FLAGS = flags.FLAGS
 #random.seed(123490234)
 
@@ -20,36 +23,51 @@ FLAGS = flags.FLAGS
 #filename = dataset_PATH + task_id + "_{0}-shot_2.p".format(num_shots)
 #tasks = pickle.load(open(filename, "rb"))
 
-filename = "data/C-sin_10-shot_legit_2.p"
+filename = "data/bounce-states_100-shot_2.p"
 #batch_size = 25
 
 tasks = pickle.load(open(filename, "rb"))
 
-def convertData(batch_size,myTrain):
-    num_batches = len(myTrain)/batch_size
-    print("My Train length: " , len(myTrain), " batch size: " , batch_size, " num batches: " , num_batches)
-    #Now pick each one of the groups
-    allTrainData = []
-    for i in xrange(0,num_batches):
-        tasks_for_batch = myTrain[i*batch_size:(i+1)*batch_size]
-        inputAll = np.array([])
-        labelAll = np.array([])
-        for task in tasks_for_batch:
-            data = task[0]
-            inputa = data[0][0]
-            labela = data[0][1]
-            inputb = data[1][0]
-            labelb = data[1][1]           
-            inputs = np.vstack((inputa,inputb)).reshape(1,-1,1)
-            labels = np.vstack((labela,labelb)).reshape(1,-1,1)
-            if inputAll.size == 0:
-                inputAll = inputs
-                labelAll = labels
-            else:
-                inputAll = np.vstack((inputAll,inputs))
-                labelAll = np.vstack((labelAll,labels))
-        allTrainData.append([inputAll,labelAll,0,0])
-    return allTrainData
+def convertData(batch_size,myTrain,shouldPlot=False):
+        num_batches = len(myTrain)/batch_size
+        allTrainData = []
+        for i in xrange(0,num_batches):
+            tasks_for_batch = myTrain[i*batch_size:(i+1)*batch_size]
+            inputAll = np.array([])
+            labelAll = np.array([])
+            for task in tasks_for_batch:
+                data = task[0]
+                inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
+                onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
+                inputb = data[1][0].reshape(-1,6)
+                onlyNextLabelb = data[1][0][:,0:1,:].reshape(-1,2)
+                inputs = np.vstack((inputa,inputb))
+                inputs = inputs.reshape(1,-1,6)
+                labels = np.vstack((onlyNextLabela,onlyNextLabelb)).reshape(1,-1,2)
+                #print("X's: " , inputs[0][0])
+                #print("Ans: " , labels[0][0])
+                #Graph all the points now
+                taskX = inputs[0][0][0:5:2] 
+                taskY = inputs[0][0][1:6:2]
+                outX = labels[0][0][0]
+                outY = labels[0][0][1]
+                if shouldPlot:
+                    pltX = taskX + outX
+                    print(pltX)
+                    print(outX)
+                    plt.plot(list(taskX) + list([outX]), list(taskY) + [outY], '-o')
+                if inputAll.size == 0:
+                    inputAll = inputs
+                    labelAll = labels
+                else:
+                    inputAll = np.vstack((inputAll,inputs))
+                    labelAll = np.vstack((labelAll,labels))
+                #print("IN All: " , inputAll)
+            if shouldPlot:
+                plt.show()
+            allTrainData.append([inputAll,labelAll,0,0])
+        #print("Train data: " , allTrainData)
+        return allTrainData
 
 
 class DataGenerator(object):
@@ -75,8 +93,8 @@ class DataGenerator(object):
             self.amp_range = config.get('amp_range', [0.1, 5.0])
             self.phase_range = config.get('phase_range', [0, np.pi])
             self.input_range = config.get('input_range', [-5.0, 5.0])
-            self.dim_input = 1
-            self.dim_output = 1
+            self.dim_input = 6
+            self.dim_output = 2
         elif 'omniglot' in FLAGS.datasource:
             self.num_classes = config.get('num_classes', FLAGS.num_classes)
             self.img_size = config.get('img_size', (28, 28))

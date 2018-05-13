@@ -111,10 +111,14 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
             inputa = batch_x[:, :num_classes*FLAGS.update_batch_size, :]
             #print("Input a: " , inputa.shape)
             #print(inputa[0])
-
             labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
+            #print("Label a: " , labela.shape)
             inputb = batch_x[:, num_classes*FLAGS.update_batch_size:, :] # b used for testing
             labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
+            #print("Ina Shape: " , inputa.shape)
+            #print("Inb Shape: " , inputb.shape)
+
+
             feed_dict = {model.inputa: inputa, model.inputb: inputb,  model.labela: labela, model.labelb: labelb}
 
         if itr < FLAGS.pretrain_iterations:
@@ -166,6 +170,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                 labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
                 #print("inputa: " , inputa[0])
                 print("Ina Shape: " , inputa.shape)
+                print("Inb Shape: " , inputb.shape)
                 #my = input("hi")
                 feed_dict = {model.inputa: inputa, model.inputb: inputb,  model.labela: labela, model.labelb: labelb, model.meta_lr: 0.0}
                 if model.classification:

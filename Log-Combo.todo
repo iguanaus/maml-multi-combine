@@ -1,0 +1,10 @@
+Run Command:
+
+python main.py --datasource=sinusoid --logdir=logs/sine1/ --metatrain_iterations=5000 --norm=None --update_batch_size=10 --limit_task True --regularize_penal 0.0
+
+python main.py --datasource=sinusoid --logdir=logs/sine15/ --metatrain_iterations=5000 --norm=None --update_batch_size=10 --limit_task True --regularize_penal 0.0 --train=False --test_set=True
+
+New run:
+  python main.py --datasource=sinusoid --logdir=logs/sine4/ --metatrain_iterations=20000 --norm=None --update_batch_size=10 --limit_task True --regularize_penal 0.0 --meta_lr .00001 --update_lr .00001
+
+
