@@ -75,6 +75,8 @@ flags.DEFINE_bool('test_set', False, 'Set to true to test on the the test set, F
 flags.DEFINE_integer('train_update_batch_size', -1, 'number of examples used for gradient update during training (use if you want to test with a different number).')
 flags.DEFINE_float('train_update_lr', -1, 'value of inner gradient step step during training. (use if you want to test with a different value)') # 0.1 for omniglot
 
+graphProgress = True
+
 def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
     SUMMARY_INTERVAL = 100
     SAVE_INTERVAL = 1000
@@ -149,7 +151,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
         #print(inputb.shape)
         #print(labelb.shape)
         #print(predValuesB.shape)
-        #graphPoints(inputb[0],labelb[0],predValuesB[0])
+        graphPoints(inputb[0],labelb[0],predValuesB[0])
 
 
         if itr % SUMMARY_INTERVAL == 0:
@@ -406,19 +408,32 @@ def main():
         test(model, saver, sess, exp_string, data_generator, test_num_updates)
 
 # This is for bouncing ball, to visualize the errors.
+
+
+import matplotlib.pylab as plt
 def graphPoints(inval,lab,true):
     print("Graping....")
     for i in xrange(0,len(inval)):
-        in_val = inval[i]
+        in_val_x = inval[i][0:5:2]
+        in_val_y = inval[i][1:6:2]
         la_val = lab[i]
         tr_val = true[i]
-        in_val.reshape(3,2)
-        la_val.reshape(1,2)
-        tr_val.reshape(1,2)
-        print("In Val: " , in_val)
-        print("LA : " , la_val)
-        print("TR : " , tr_val)
-        os.exit() 
+        outX = tr_val[0]
+        outY = tr_val[1]
+
+        print("x vals", list(in_val_x),list([la_val[0]]))
+        #print("In Val: " , in_val)
+        #print("LA : " , la_val)
+        #print("TR : " , tr_val)
+        col = np.random.rand(3,)
+
+        plt.plot(list(in_val_x) + list([la_val[0]]), list(in_val_y) + list([la_val[1]]), '-o',c=col)
+        plt.plot(outX,outY,'-o',c=col)
+        plt.show()
+        #os.exit()
+    plt.show()
+
+    os.exit() 
         
     pass
 

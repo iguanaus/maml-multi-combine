@@ -11,3 +11,38 @@ New run:
 
 Trying to get the multi-state to train:
   python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume False --pretrain_iterations=70000 --metatrain_iterations=0
+
+
+This did it:
+  python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume False --pretrain_iterations=70000 --metatrain_iterations=0
+
+  Got loss to: 
+    Validation results: 0.0010618774686008692, 0.023718448355793953
+  Pretrain Iteration 21600: 0.0010948678, 0.023260498
+  Pretrain Iteration 21700: 0.0011010369, 0.023254389
+  (takes about 20k iterations)
+
+Trying maml:
+  python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume False --metatrain_iterations=70000
+
+python main.py --datasource=sinusoid --logdir=logs/sine5/ --metatrain_iterations=20000 --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .00001 --update_lr .00001 --resume=True
+
+
+python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000
+
+
+
+CUDA_VISIBLE_DEVICES="0" python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume False --metatrain_iterations=0 --pretrain_iterations=70000
+
+
+
+python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000 --train=False --test_set=True
+
+
+
+
+
+
+
+
+
