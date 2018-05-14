@@ -189,7 +189,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
                 inputb = batch_x[:, num_classes*FLAGS.update_batch_size:, :]
                 labela = batch_y[:, :num_classes*FLAGS.update_batch_size, :]
                 labelb = batch_y[:, num_classes*FLAGS.update_batch_size:, :]
-                print("inputa: " , inputa[0])
+                #print("inputa: " , inputa[0])
                 #print("Ina Shape: " , inputa.shape)
                 #print("Inb Shape: " , inputb.shape)
                 #my = input("hi")

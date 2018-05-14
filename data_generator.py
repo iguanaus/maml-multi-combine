@@ -39,13 +39,10 @@ def convertData(batch_size,myTrain,shouldPlot=False):
                 data = task[0]
                 inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
                 onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
-                
-
                 inputb = data[1][0].reshape(-1,6)
                 #print("in b:" , inputb)
                 onlyNextLabelb = data[1][1][:,0:1,:].reshape(-1,2) #This was pulling from the same set. 
                 #print("Next b: " , onlyNextLabelb)
-
                 inputs = np.vstack((inputa,inputb))
                 inputs = inputs.reshape(1,-1,6)
                 labels = np.vstack((onlyNextLabela,onlyNextLabelb)).reshape(1,-1,2)
