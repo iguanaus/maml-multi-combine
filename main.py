@@ -140,18 +140,18 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
 
         result = sess.run(input_tensors, feed_dict)
 
-        print_result = sess.run(model.outputbs,feed_dict)
+        #print_result = sess.run(model.outputbs,feed_dict)
         #print(print_result)
         #print(len(print_result))
         #print(print_result.shape)
-        predValuesB = print_result[-1] # Get the last gradient update. 
+        #predValuesB = print_result[-1] # Get the last gradient update. 
         #print("input values b: " , inputb)
         #print("True values b : " , labelb)
         #print("print reuslt  : " , predValuesB)
         #print(inputb.shape)
         #print(labelb.shape)
         #print(predValuesB.shape)
-        graphPoints(inputb[0],labelb[0],predValuesB[0])
+        #graphPoints(inputb[0],labelb[0],predValuesB[0])
 
 
         if itr % SUMMARY_INTERVAL == 0:
