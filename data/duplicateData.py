@@ -15,8 +15,10 @@ tasks = pickle.load(open(filename, "rb"))
 newList = []
 
 def restructure(indice="tasks_train"):
+	print("number of tasks: " , tasks[indice])
 	for j in range(0,len(tasks[indice])):
 		if j % 100 == 0:
+			print j
 			print(float(j)/len(tasks[indice]))
 		firstTask = tasks[indice][j]
 		dataTask = firstTask[0]
