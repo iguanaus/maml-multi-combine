@@ -23,7 +23,8 @@ FLAGS = flags.FLAGS
 #filename = dataset_PATH + task_id + "_{0}-shot_2.p".format(num_shots)
 #tasks = pickle.load(open(filename, "rb"))
 
-filename = "data/bounce-states_100-shot_2.p"
+#filename = "data/bounce-states_100-shot_2.p"
+filename = "data/C-sin_10-shot_legit_stateform.p"
 #batch_size = 25
 
 tasks = pickle.load(open(filename, "rb"))
@@ -66,12 +67,12 @@ def convertData(batch_size,myTrain,shouldPlot=False):
             #print("Ans: " , labels[0][0])
 
             #Graph all the points now
-            for j in xrange(0, 200):
-                taskX = inputs[0][j][0:5:2] 
-                taskY = inputs[0][j][1:6:2]
-                outX = labels[0][j][0]
-                outY = labels[0][j][1]
-                if shouldPlot:
+            if shouldPlot:
+                for j in xrange(0, 200):
+                    taskX = inputs[0][j][0:5:2] 
+                    taskY = inputs[0][j][1:6:2]
+                    outX = labels[0][j][0]
+                    outY = labels[0][j][1]
                     pltX = taskX + outX
                     print(pltX)
                     print(outX)
