@@ -28,7 +28,7 @@ filename = "data/bounce-states_100-shot_2.p"
 
 tasks = pickle.load(open(filename, "rb"))
 
-def convertData(batch_size,myTrain,shouldPlot=True):
+def convertData(batch_size,myTrain,shouldPlot=False):
     num_batches = len(myTrain)/batch_size
     allTrainData = []
     for i in xrange(0,num_batches):
@@ -37,6 +37,18 @@ def convertData(batch_size,myTrain,shouldPlot=True):
         labelAll = np.array([])
         for task in tasks_for_batch:
             data = task[0]
+            info = task[1]
+            boxCords = info['z'].reshape(-1,2)*.025
+
+            xCords = list(boxCords[:,0])
+            yCords = list(boxCords[:,1])
+            #Add last element to it.
+            xCords.append(xCords[0])
+            yCords.append(yCords[0])
+            if shouldPlot:
+                plt.plot(xCords,yCords)
+            #plt.show()
+
             inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
             onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
             inputb = data[1][0].reshape(-1,6)
@@ -52,32 +64,33 @@ def convertData(batch_size,myTrain,shouldPlot=True):
             #print("Labels:" , labels)
             #print("X's: " , inputs[0][0])
             #print("Ans: " , labels[0][0])
+
             #Graph all the points now
-            taskX = inputs[0][0][0:5:2] 
-            taskY = inputs[0][0][1:6:2]
-            outX = labels[0][0][0]
-            outY = labels[0][0][1]
-            if shouldPlot:
-                pltX = taskX + outX
-                print(pltX)
-                print(outX)
-                plt.plot(list(taskX) + list([outX]), list(taskY) + [outY], '-o')
+            for j in xrange(0, 200):
+                taskX = inputs[0][j][0:5:2] 
+                taskY = inputs[0][j][1:6:2]
+                outX = labels[0][j][0]
+                outY = labels[0][j][1]
+                if shouldPlot:
+                    pltX = taskX + outX
+                    print(pltX)
+                    print(outX)
+                    plt.plot(list(taskX) + list([outX]), list(taskY) + [outY], '-o')
             if inputAll.size == 0:
                 inputAll = inputs
                 labelAll = labels
             else:
                 inputAll = np.vstack((inputAll,inputs))
                 labelAll = np.vstack((labelAll,labels))
-            #print("IN All: " , inputAll)
+                #print("IN All: " , inputAll)
 
-            inputb = inputAll[:,FLAGS.update_batch_size:]
-            labelb = labelAll[:,FLAGS.update_batch_size:]
+            #inputb = inputAll[:,FLAGS.update_batch_size:]
+            #labelb = labelAll[:,FLAGS.update_batch_size:]
             #print("InputB: " , inputb)
             #print("LabelB: " , labelb)
             #os.exit()
-
-        if shouldPlot:
-            plt.show()
+            if shouldPlot:
+                plt.show()
         allTrainData.append([inputAll,labelAll,0,0])
     #print("Sample batch:")
     b_x,b_y,amp,phase = allTrainData[1]
