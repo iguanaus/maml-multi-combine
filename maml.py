@@ -24,7 +24,7 @@ class MAML:
         self.classification = False
         self.test_num_updates = test_num_updates
         if FLAGS.datasource == 'sinusoid':
-            self.dim_hidden = [40, 40,40]
+            self.dim_hidden = [80, 80,80]
             self.loss_func = mse
             self.forward = self.forward_fc
             self.construct_weights = self.construct_fc_weights
@@ -95,6 +95,7 @@ class MAML:
                 output = self.forward(inputb, fast_weights, reuse=True)
                 task_outputbs.append(output)
                 task_lossesb.append(self.loss_func(output, labelb))
+                print("Num updates is: " , num_updates-1)
 
                 for j in range(num_updates - 1):
                     loss = self.loss_func(self.forward(inputa, fast_weights, reuse=True), labela)
