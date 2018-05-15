@@ -4,8 +4,8 @@ import numpy as np
 
 
 
-filename = "C-sin_10-shot_legit.p"
-#filename = "bounce-states_100-shot_2.p"
+#filename = "C-sin_10-shot_legit_2.p"
+filename = "bounce-states_100-shot_2.p"
 new_file = "C-sin_10-shot_legit_stateform.p"
 
 tasks = pickle.load(open(filename, "rb"))
