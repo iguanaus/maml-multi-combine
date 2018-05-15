@@ -142,7 +142,7 @@ class MAML:
         )
         self.weights1 = tf.trainable_variables() # all vars of your graph
         regularization_penalty = tf.contrib.layers.apply_regularization(self.l1_regularizer, self.weights1)
-        regularize = False
+        regularize = True
 
 
         if 'train' in prefix:
