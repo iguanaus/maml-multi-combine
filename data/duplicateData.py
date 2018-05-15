@@ -12,10 +12,9 @@ tasks = pickle.load(open(filename, "rb"))
 
 #Now convert it
 
-newList = []
-
 def restructure(indice="tasks_train"):
 	print("number of tasks: " , len(tasks[indice]))
+	newList = []
 	for j in range(0,len(tasks[indice])):
 		if j % 100 == 0:
 			print j
@@ -50,10 +49,10 @@ def restructure(indice="tasks_train"):
 	return newList
 	#tasks[indice] = newList
 def pullVals():
-	print("Adding train....")
-	l1 = restructure("tasks_train")
-	print("Adding test ....")
-	l2 = restructure("tasks_test")
+print("Adding train....")
+l1 = restructure("tasks_train")
+print("Adding test ....")
+l2 = restructure("tasks_test")
 
 	tasks = {'tasks_train':l1,'tasks_test':l2}
 	print("Tasks: ", tasks)
