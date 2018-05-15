@@ -151,7 +151,7 @@ def train(model, saver, sess, exp_string, data_generator, resume_itr=0):
         #print(inputb.shape)
         #print(labelb.shape)
         #print(predValuesB.shape)
-        #graphPoints(inputb[0],labelb[0],predValuesB[0])
+        graphPoints(inputb[0],labelb[0],predValuesB[0])
 
 
         if itr % SUMMARY_INTERVAL == 0:

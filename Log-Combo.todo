@@ -39,7 +39,42 @@ CUDA_VISIBLE_DEVICES="0" python main.py --datasource=sinusoid --logdir=logs/sine
 python main.py --datasource=sinusoid --logdir=logs/sine5/  --norm=None --update_batch_size=100 --limit_task True --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000 --train=False --test_set=True
 
 
+Next things to try on tor:
 
+python main.py --datasource=sinusoid --logdir=logs/sine6/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .001 --update_lr .001 --resume True --metatrain_iterations=70000 --train=False --test_set=True 
+
+
+python main.py --datasource=sinusoid --logdir=logs/sine6/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .001 --update_lr .001 --resume True --metatrain_iterations=70000 --limit_task=True
+
+Try adjusting learning rate.
+Try more gradient steps.
+Try decreasing batch size
+Try num_updates
+  num_updates = 10
+
+New run:
+  python main.py --datasource=sinusoid --logdir=logs/sine7/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000 --limit_task=True --num_updates=10
+
+  CUDA_VISIBLE_DEVICES="1" python main.py --datasource=sinusoid --logdir=logs/sine8/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .0001 --update_lr .0001 --resume True --metatrain_iterations=70000 --limit_task=True --num_updates=20
+
+
+Relu?
+
+python main.py --datasource=sinusoid --logdir=logs/sine6/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .001 --update_lr .001 --resume True --metatrain_iterations=70000 --limit_task=True 
+
+
+Things to look into:
+  Trying to drop the loss. 
+
+  Validation results: 0.0009190408163703978, 0.0009184564114548265
+Iteration 68100: 0.0008531325, 0.00084577344
+
+
+  python main.py --datasource=sinusoid --logdir=logs/sine6/  --norm=None --update_batch_size=100 --regularize_penal 0.0 --meta_lr .001 --update_lr .001 --resume True --metatrain_iterations=70000 --limit_task=True 
+
+
+
+Maybe it is in how the data is being processed? It seems to be getting stuck in a local min.
 
 
 

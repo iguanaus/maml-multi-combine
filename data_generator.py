@@ -28,65 +28,67 @@ filename = "data/bounce-states_100-shot_2.p"
 
 tasks = pickle.load(open(filename, "rb"))
 
-def convertData(batch_size,myTrain,shouldPlot=False):
-        num_batches = len(myTrain)/batch_size
-        allTrainData = []
-        for i in xrange(0,num_batches):
-            tasks_for_batch = myTrain[i*batch_size:(i+1)*batch_size]
-            inputAll = np.array([])
-            labelAll = np.array([])
-            for task in tasks_for_batch:
-                data = task[0]
-                inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
-                onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
-                inputb = data[1][0].reshape(-1,6)
-                #print("in b:" , inputb)
-                onlyNextLabelb = data[1][1][:,0:1,:].reshape(-1,2) #This was pulling from the same set. 
-                #print("Next b: " , onlyNextLabelb)
-                inputs = np.vstack((inputa,inputb))
-                inputs = inputs.reshape(1,-1,6)
-                labels = np.vstack((onlyNextLabela,onlyNextLabelb)).reshape(1,-1,2)
-                #print("Inputs:" , inputs)
-                #print("Labels:" , labels)
-                #print("X's: " , inputs[0][0])
-                #print("Ans: " , labels[0][0])
-                #Graph all the points now
-                taskX = inputs[0][0][0:5:2] 
-                taskY = inputs[0][0][1:6:2]
-                outX = labels[0][0][0]
-                outY = labels[0][0][1]
-                if shouldPlot:
-                    pltX = taskX + outX
-                    print(pltX)
-                    print(outX)
-                    plt.plot(list(taskX) + list([outX]), list(taskY) + [outY], '-o')
-                if inputAll.size == 0:
-                    inputAll = inputs
-                    labelAll = labels
-                else:
-                    inputAll = np.vstack((inputAll,inputs))
-                    labelAll = np.vstack((labelAll,labels))
-                #print("IN All: " , inputAll)
+def convertData(batch_size,myTrain,shouldPlot=True):
+    num_batches = len(myTrain)/batch_size
+    allTrainData = []
+    for i in xrange(0,num_batches):
+        tasks_for_batch = myTrain[i*batch_size:(i+1)*batch_size]
+        inputAll = np.array([])
+        labelAll = np.array([])
+        for task in tasks_for_batch:
+            data = task[0]
+            inputa = data[0][0].reshape(-1,6) # This is doing exactly what we want
+            onlyNextLabela = data[0][1][:,0:1,:].reshape(-1,2)
+            inputb = data[1][0].reshape(-1,6)
+            #print("in b:" , inputb)
+            onlyNextLabelb = data[1][1][:,0:1,:].reshape(-1,2) #This was pulling from the same set. 
+            #print("Next b: " , onlyNextLabelb)
+            inputs = np.vstack((inputa,inputb))
+            inputs = inputs.reshape(1,-1,6)
+            #print(inputs)
 
-                inputb = inputAll[:,FLAGS.update_batch_size:]
-                labelb = labelAll[:,FLAGS.update_batch_size:]
-                #print("InputB: " , inputb)
-                #print("LabelB: " , labelb)
-                #os.exit()
-
+            labels = np.vstack((onlyNextLabela,onlyNextLabelb)).reshape(1,-1,2)
+            #print("Inputs:" , inputs)
+            #print("Labels:" , labels)
+            #print("X's: " , inputs[0][0])
+            #print("Ans: " , labels[0][0])
+            #Graph all the points now
+            taskX = inputs[0][0][0:5:2] 
+            taskY = inputs[0][0][1:6:2]
+            outX = labels[0][0][0]
+            outY = labels[0][0][1]
             if shouldPlot:
-                plt.show()
-            allTrainData.append([inputAll,labelAll,0,0])
-        #print("Sample batch:")
-        b_x,b_y,amp,phase = allTrainData[1]
-        inputb = b_x[:,:FLAGS.update_batch_size]
-        labelb = b_y[:,:FLAGS.update_batch_size]
-        #print("InputB: " , inputb)
-        #print("LabelB: " , labelb)
-        #os.exit()
+                pltX = taskX + outX
+                print(pltX)
+                print(outX)
+                plt.plot(list(taskX) + list([outX]), list(taskY) + [outY], '-o')
+            if inputAll.size == 0:
+                inputAll = inputs
+                labelAll = labels
+            else:
+                inputAll = np.vstack((inputAll,inputs))
+                labelAll = np.vstack((labelAll,labels))
+            #print("IN All: " , inputAll)
 
-        #print("Train data: " , allTrainData)
-        return allTrainData
+            inputb = inputAll[:,FLAGS.update_batch_size:]
+            labelb = labelAll[:,FLAGS.update_batch_size:]
+            #print("InputB: " , inputb)
+            #print("LabelB: " , labelb)
+            #os.exit()
+
+        if shouldPlot:
+            plt.show()
+        allTrainData.append([inputAll,labelAll,0,0])
+    #print("Sample batch:")
+    b_x,b_y,amp,phase = allTrainData[1]
+    inputb = b_x[:,:FLAGS.update_batch_size]
+    labelb = b_y[:,:FLAGS.update_batch_size]
+    #print("InputB: " , inputb)
+    #print("LabelB: " , labelb)
+    #os.exit()
+
+    #print("Train data: " , allTrainData)
+    return allTrainData
 
 
 class DataGenerator(object):
