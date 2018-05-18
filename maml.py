@@ -24,7 +24,7 @@ class MAML:
         self.classification = False
         self.test_num_updates = test_num_updates
         if FLAGS.datasource == 'sinusoid':
-            self.dim_hidden = [80, 80,80]
+            self.dim_hidden = [40, 40,40]
             self.loss_func = mse
             self.forward = self.forward_fc
             self.construct_weights = self.construct_fc_weights
@@ -110,29 +110,16 @@ class MAML:
 
                 task_output = [task_outputa, task_outputbs, task_lossa, task_lossesb]
 
-                if self.classification:
-                    task_accuracya = tf.contrib.metrics.accuracy(tf.argmax(tf.nn.softmax(task_outputa), 1), tf.argmax(labela, 1))
-                    for j in range(num_updates):
-                        task_accuraciesb.append(tf.contrib.metrics.accuracy(tf.argmax(tf.nn.softmax(task_outputbs[j]), 1), tf.argmax(labelb, 1)))
-                    task_output.extend([task_accuracya, task_accuraciesb])
-
                 return task_output
 
-            if FLAGS.norm is not 'None':
-                # to initialize the batch norm vars, might want to combine this, and not run idx 0 twice.
-                unused = task_metalearn((self.inputa[0], self.inputb[0], self.labela[0], self.labelb[0]), False)
-
             out_dtype = [tf.float32, [tf.float32]*num_updates, tf.float32, [tf.float32]*num_updates]
-            if self.classification:
-                out_dtype.extend([tf.float32, [tf.float32]*num_updates])
+
             result = tf.map_fn(task_metalearn, elems=(self.inputa, self.inputb, self.labela, self.labelb), dtype=out_dtype, parallel_iterations=FLAGS.meta_batch_size)
             #In case you want to fetch it. 
             
 
-            if self.classification:
-                outputas, outputbs, lossesa, lossesb, accuraciesa, accuraciesb = result
-            else:
-                outputas, outputbs, lossesa, lossesb  = result
+            outputas, outputbs, lossesa, lossesb  = result
+            
             self.outputbs = outputbs
         print("Meta batch: " , FLAGS.meta_batch_size)
         ## Performance & Optimization
@@ -142,7 +129,7 @@ class MAML:
         )
         self.weights1 = tf.trainable_variables() # all vars of your graph
         regularization_penalty = tf.contrib.layers.apply_regularization(self.l1_regularizer, self.weights1)
-        regularize = True
+        
 
 
         if 'train' in prefix:
@@ -153,28 +140,21 @@ class MAML:
             if self.classification:
                 self.total_accuracy1 = total_accuracy1 = tf.reduce_sum(accuraciesa) / tf.to_float(FLAGS.meta_batch_size)
                 self.total_accuracies2 = total_accuracies2 = [tf.reduce_sum(accuraciesb[j]) / tf.to_float(FLAGS.meta_batch_size) for j in range(num_updates)]
-            if regularize:
-                self.pretrain_op = tf.train.AdamOptimizer(self.meta_lr).minimize(total_loss1 + regularization_penalty)
-            else:
-                self.pretrain_op = tf.train.AdamOptimizer(self.meta_lr).minimize(total_loss1)
+            #if regularize:
+            self.pretrain_op = tf.train.AdamOptimizer(self.meta_lr).minimize(total_loss1 + regularization_penalty)
+            #else:
+            #    self.pretrain_op = tf.train.AdamOptimizer(self.meta_lr).minimize(total_loss1)
         
             if FLAGS.metatrain_iterations > 0:
 
                 optimizer = tf.train.AdamOptimizer(self.meta_lr)
-                if regularize:
-                    self.gvs = gvs = optimizer.compute_gradients(self.total_losses2[FLAGS.num_updates-1]+regularization_penalty)
-                else:
-                    self.gvs = gvs = optimizer.compute_gradients(self.total_losses2[FLAGS.num_updates-1])
-                if FLAGS.datasource == 'miniimagenet':
-                    gvs = [(tf.clip_by_value(grad, -10, 10), var) for grad, var in gvs]
+                #if regularize:
+                self.gvs = gvs = optimizer.compute_gradients(self.total_losses2[FLAGS.num_updates-1]+regularization_penalty)
                 self.metatrain_op = optimizer.apply_gradients(gvs)
         else:
             print("Meta batch: " , FLAGS.meta_batch_size)
             self.metaval_total_loss1 = total_loss1 = tf.reduce_sum(lossesa) / tf.to_float(FLAGS.meta_batch_size)
             self.metaval_total_losses2 = total_losses2 = [tf.reduce_sum(lossesb[j]) / tf.to_float(FLAGS.meta_batch_size) for j in range(num_updates)]
-            if self.classification:
-                self.metaval_total_accuracy1 = total_accuracy1 = tf.reduce_sum(accuraciesa) / tf.to_float(FLAGS.meta_batch_size)
-                self.metaval_total_accuracies2 = total_accuracies2 =[tf.reduce_sum(accuraciesb[j]) / tf.to_float(FLAGS.meta_batch_size) for j in range(num_updates)]
 
         ## Summaries
         tf.summary.scalar(prefix+'Pre-update loss', total_loss1)

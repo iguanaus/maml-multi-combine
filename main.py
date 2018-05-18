@@ -54,7 +54,7 @@ flags.DEFINE_integer('num_updates', 1, 'number of inner gradient updates during 
 
 flags.DEFINE_float('regularize_penal', 1e-3, 'Regularization penalty')
 
-flags.DEFINE_bool('limit_task', False, 'if True, limit the # of tasks shown')
+flags.DEFINE_bool('limit_task', True, 'if True, limit the # of tasks shown')
 flags.DEFINE_integer('limit_task_num', 4, 'if True, limit the # of tasks shown')
 
 
@@ -394,7 +394,10 @@ def main():
     tf.train.start_queue_runners()
 
     if FLAGS.resume or not FLAGS.train:
+        print("Seeing if resume....")
+        print("File string: " , FLAGS.logdir + '/' + exp_string)
         model_file = tf.train.latest_checkpoint(FLAGS.logdir + '/' + exp_string)
+        print("model file name: ", model_file)
         if FLAGS.test_iter > 0:
             model_file = model_file[:model_file.index('model')] + 'model' + str(FLAGS.test_iter)
         if model_file:

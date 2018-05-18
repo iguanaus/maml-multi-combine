@@ -23,8 +23,8 @@ FLAGS = flags.FLAGS
 #filename = dataset_PATH + task_id + "_{0}-shot_2.p".format(num_shots)
 #tasks = pickle.load(open(filename, "rb"))
 
-#filename = "data/bounce-states_100-shot_2.p"
-filename = "data/C-sin_10-shot_legit_stateform.p"
+filename = "data/bounce-states_100-shot_2.p"
+#filename = "data/C-sin_10-shot_legit_stateform.p"
 #batch_size = 25
 
 tasks = pickle.load(open(filename, "rb"))
@@ -213,11 +213,16 @@ class DataGenerator(object):
         #print("num tasks: " , num_tasks)
         #print("Rand id: " , ranId)
         if train:
-            ranId = random.randint(0,len(self.allTrainData)-1)
+            idRet = self.iterCount
+            self.iterCount += 1
+            if (self.iterCount > (len(self.allTrainData)-1)):
+                self.iterCount = 0
+            #ranId = random.randint(0,len(self.allTrainData)-1)
             return self.allTrainData[ranId]
         else:
             if numTestBatches > 1:
                 numTestBatches = len(self.allTestData)
+            #idRet = 0
             ranId = random.randint(0,numTestBatches-1)
             #print("testing..: " , ranId)
             return self.allTestData[ranId]
