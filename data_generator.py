@@ -122,6 +122,7 @@ class DataGenerator(object):
         self.batch_size = batch_size
         self.num_samples_per_class = num_samples_per_class
         self.num_classes = 1  # by default 1 (only relevant for classification problems)
+        self.iterCount = 0 
 
         if FLAGS.datasource == 'sinusoid':
             self.generate = self.generate_sinusoid_batch
@@ -218,7 +219,7 @@ class DataGenerator(object):
             if (self.iterCount > (len(self.allTrainData)-1)):
                 self.iterCount = 0
             #ranId = random.randint(0,len(self.allTrainData)-1)
-            return self.allTrainData[ranId]
+            return self.allTrainData[idRet]
         else:
             if numTestBatches > 1:
                 numTestBatches = len(self.allTestData)
